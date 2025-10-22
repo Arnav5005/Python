@@ -30,7 +30,7 @@ a = "Ava adams"
 print (a.title())
 print (a.upper())
 print (a.lower())
-# note title function is used to print like a title or a proper noun
+# note - title function is used to print like a title or a proper noun
 # if you want to use title , upper and lower function on a list then a for loop is used like -
 # l = ['a','B','C','d','e']
 # for l_ in l :
@@ -1133,3 +1133,25 @@ check_line()
 # done in string_formatting.py
 
 # VIRTUAL ENVIRONMENT (to be done)
+
+# A virtual environment in Python is an isolated workspace that lets you manage dependencies for a specific project without interfering with other projects or the system-wide Python installation.
+
+# Imagine you’re working on two projects:
+
+# Project A needs Django 3.2
+
+# Project B needs Django 5.0
+
+# If both are installed globally, they’ll conflict. A virtual environment solves this by keeping each project’s dependencies separate.
+
+# python -m venv myenv       this will create a folder named myenv in the directory
+
+# myenv\Scripts\activate      this will activate the virtual environment now every package installed goes to the environment
+
+# typing deactivate will deactivate the virtual environment
+
+# pip freeze        this command will gives list of all the packages installed on the environment 
+
+# pip freeze > requirement.txt            this command will put all the list of packages in a .txt file
+
+# pip install -r requirements.txt           to install the packages from a .txt file
