@@ -1,10 +1,8 @@
-a = (input("Enter the number :")) # here we can't use int we have to use in in print because if we enter a word
-# instead of a number then an error will be there because a word can't be converted into an integer
+a = (input("Enter the number :")) # here we can't use int we have to use in in print because if we enter a word instead of a number then an error will be there because a word can't be converted into an integer
 print(f"Multiplication table of {a} is :")
 try :
     for i in range (1,11) :
-        print(f"{int(a)} X {i} = {int(a)*i}") # try means try whether the code can be executed and if it can then 
-# it will be executed and if it doesn't then it will be an exception .
+        print(f"{int(a)} X {i} = {int(a)*i}") # try means try whether the code can be executed and if it can then it will be executed and if it doesn't then it will be an exception .
 except:
     print("Invalid Input")
 print("End of program")
@@ -34,10 +32,9 @@ finally:
 
 # advantage of finally over print 
 
-# Ques - even if error occured print also executed if it is not indented so why do we use finally if we just want to 
-# print things which can be executed by using print function ?
-# Ans - finally function helps while we are defining a function like if we use return before print then print won't 
-# be executed but instead of print if we are using finally then it will be executed.
+# Ques - even if error occured print also executed if it is not indented so why do we use finally if we just want to print things which can be executed by using print function ?
+
+# Ans - finally function helps while we are defining a function like if we use return before print then print won't be executed but instead of print if we are using finally then it will be executed.
 
 def func():
     try :

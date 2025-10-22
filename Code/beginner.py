@@ -11,8 +11,7 @@ print ('hello world')
 
 
 message = 'python is a proggraming language'
-# note that while printing message i didn't use quotes because it was a variable and if o variable was assigned then
-# quotes would've been used
+# note that while printing message i didn't use quotes because it was a variable and if o variable was assigned then quotes would've been used
 print (message)
 
 lOl = 'pawa'
@@ -41,6 +40,7 @@ print (a.lower())
 
 
 # Method 1
+
 first_name = 'Arnav'
 middle_name = 'Pratap'
 last_name = 'Singh'
@@ -59,45 +59,54 @@ print (first_name,middle_name,last_name)
 first_name = 'Kanishka'
 last_name = 'tiwari'
 full_name = first_name.upper() + ' ' + last_name.upper() + " " + '!'
-# In full_name function exclamatory mark was put under inverted commas because kanishka and tiwari both were a part
-# of variable and so they don't need inverted commas to be defined that's why inverted commas were used on the mark
+# In full_name function exclamatory mark was put under inverted commas because kanishka and tiwari both were a part of variable and so they don't need inverted commas to be defined that's why inverted commas were used on the mark
 print (full_name)
 
 # Method 2
 
 print (first_name.upper(),last_name.upper(),"!")
 
+# Method 3 (best way of string formatting)
+# f-string
+
+statement="Hey my name is {} and i am from {}"
+country="India"
+name="Arnav pratap singh"
+print(statement.format(name,country))
+print(f"Hey my name is {name} and i am from {country}") # Hey my name is Arnav pratap singh and i am from India
+print(f"Hey my name is {{name}} and i am from {{country}}") # Hey my name is {name} and i am from {country}
+
+price=42.125
+print(f"for only ${price:.2f}") # for only $42.12
+
+# docstring (string literals that we write after the definition of a function , class or module to specify what is happening in the function or code)
+
+def square(n):
+    # print(n) this is written before the function definition so this will act as a dosctring if we print(square__docstring__) it'll return none
+    '''take in number n, return the square of n''' # this is a docstring and it is written just above the function definition
+    print(n**2)
+square(5)
+print(square.__doc__) # to print the docstring
+
+# python
+# import this       this is a command line code it return the Zen of python which is a poem written by Tim Peters
 
 # 4.blankspace , new line
 
 
-print ('\t\tPython') #\t is used for blankspace and using it twice gives more space
-print ('WebDev:\n\tPyhton\n\tC++\n\tJava\n\tHTML') #\n is used to add a new line 
-
-message = "I slept with Anirudh's girlfriend"
-print (message) 
-# apostophy can't be printed normally ecause  interpretor will thought the inverted commas are never ending so to 
-# avoid this the sentence is put in double quotes
-
-# Method 1
+print ('\t\tPython') # \t is used for tabspace and using it twice gives more space
+print ('WebDev:\n\tPyhton\n\tC++\n\tJava\n\tHTML') # \n is used to add a new line 
 
 a = "Albert Einstein once said ,"
 b = '"A person who never made a mistake have never tried something new."'
-c = a + " " + b
-print(c)
-
-# Method 2
-
+print(f'{a} {b}')
 print (a,b)
 
 print (0.2+0.1) # the answer is little unappropriate there are ways to correct this innacuracy but will try it later
-print ("0.2+0.1") # here it won't show the result because it's in quotes
 
 # Method 1
 
-age = "seventeen" # if numeric 17 would hv been used then it'll generate an error because int. can't be converted to 
-# string implicitly that's why alphabetic seventeen is used and if you want to use numeric 17 then either use string
-# function or put 17 in quotes 
+age = "seventeen" # if numeric 17 would hv been used then it'll generate an error because int. can't be converted to string implicitly that's why alphabetic seventeen is used and if you want to use numeric 17 then either use string function or put 17 in quotes 
 message = "happy" + ' ' + age + "th birthday !"
 print (message) 
 age = "17" 
@@ -109,12 +118,7 @@ print (message)
 
 # Method 2
 
-print ('happy 17th birthday !')
-
-print (2+6)
-print (8-0)
-print (2*4)
-print (2**3)
+print(f"nigga happy {age}th birthday!")
 
 a = 69
 message = "My faivourite number is :"
@@ -129,11 +133,30 @@ print (message)
 
 # CHAPTER 3 (LISTS)
 
+# list is - 
 
-l = ['arnav','is','every',"girl's",'daddy']
-print (l[0].upper())
-print (l[-1])
-print (l[-2])
+# 1.Ordered
+# 2.Mutable
+# 3.Heterogeneous
+# 4.Index-based datatype
+
+# functions on list - 
+
+# 1.substitution                                                                                                Ex - l[0]='a'
+# 2.append                      insert the element at the end of the list                                       Ex - l.append('a')
+# 3.insert                      insert the element at a particular position                                     Ex - l.insert(1,'a')
+# 4.del                         delete the element from a particular position                                   Ex - del l[1]
+# 5.pop                         if you want to access the deleted element                                       Ex - poppedElement=l.pop(1)
+# 6.remove                      if you want to remove an element but don't know it's index                      Ex - remove('a')
+# 7.sort (irreversible)         used to arrange elements of list in forward/reverse alphabetical order          Ex - l.sort()
+# 8.sorted (reversible)         same functionality the only difference is it's reversible                       Ex - print(sorted(l))
+# 9.reverse                     used to reverse the list                                                        Ex - l.reverse()
+# 10.len                        returns length of the list                                                      Ex - print(len(l))
+
+l = ['every','girl','calls','me','daddy']
+print (l[0].upper()) # EVERY
+print (l[-1]) # daddy
+print (l[-2]) # me
 
 l = ['Arnav','aarav']
 print (l[0],'says hello to',l[1].title())
@@ -161,13 +184,13 @@ print (l)
 # 2.append (addition of an element in the end of the list)
 
 
-l_ = ['Supra','jesco','Dbx'] # point to be noticed that here list name was changed because due to previous function
-# the new list was l = ['GTR','Jesco','Dbx']
-l_.append('GTR') # Append function adds an element to the list at the last position but if you want your newly added
-# element to be at a particular poaition withour replacing any other then use inert funtion
+l_ = ['Supra','jesco','Dbx'] # point to be noticed that here list name was changed because due to previous function the new list was       l = ['GTR','Jesco','Dbx']
+l_.append('GTR') # Append function adds an element to the list at the last position but if you want your newly added element to be at a particular poaition withour replacing any other then use inert funtion
 print (l_)
 a = ['b','c','d']
-print (a.append('a')) # apparantly we have to use nested list if we wish to use function inside a function
+
+print(a.append('a')) # apparantly we have to use nested list if we wish to use function inside a function as a.append('a') will append a at the end of the list but append function return none and print function displays the returned value so it'll print 'none'
+print(a) # ['b','c','d','a','a']
 
 a = ['b','c','d']
 a.append('a')
@@ -183,7 +206,7 @@ print(a) # this will add 'a' in the beginning but we had to manipulate the list
 
 l = ['Supra','Jesco','Dbx']
 l.insert(0,'GTR')
-print (l)
+print(l)
 
 
 # 4.delete (deletion of an element from a particular position)
@@ -193,20 +216,17 @@ del l_[0] # delete function is used to delete an element from any position
 print (l_)
 
 
-# 5.pop (If you want to use the value of an item after you remove it from a list . Ex-you might want to remove a
-# user from a list of active members and then add that user to a list of inactive members.)
-# pop removes the last element from the list by default (i.e. if not specified)
+# 5.pop (If you want to use the value of an item after you remove it from a list . Ex-you might want to remove a user from a list of active members and then add that user to a list of inactive members.) pop removes the last element from the list by default (i.e. if not specified)
 
 
-l = ['samsung galaxy duos','oneplus nord ce 3','redmi note 9']
+l = ['samsung galaxy duos','poco f7','oneplus nord ce 3','redmi note 9']
 popped_l = l.pop(1)
 print (l)
 print (popped_l)
 print ('the current phone I own is',popped_l.title(),'and my previously owned phones were',l)
 
 
-# 6.remove (if the position of an element which is to be removed is not known but it only removes it once i.e. if 
-# the same element is occuring twice so to remove that loop must be used) 
+# 6.remove (if the position of an element which is to be removed is not known but it only removes it once i.e. if the same element is occuring twice so to remove that loop must be used) 
 
 
 l = ['pragyan','anirudh','divya','anirudh']
@@ -234,25 +254,24 @@ for name in l :
     print ('\n'+name,", You gave been invited for dinner at Mr. Arnav's house")
 
 
-# 7.sort function (irreversible in nature / permanent , used to arrange elements of list either in forward or
-# reverse alphabetical order)
+# 7.sort function (irreversible in nature / permanent , used to arrange elements of list either in forward or reverse alphabetical order)
 
 
 l = ['mazda','gtr','cayaenne','dbx','veyron']
-print (l)
+print(l)
 l.sort()
-print (l)
+print(l)
 l.sort(reverse=True) # note here reverse=true is wrong and reverse=True is right
-print (l)
+print(l)
 
 
 # 8.sorted function (same function as sort but it is not permanent)
 
 
 l = ['mazda','gtr','cayaenne','dbx','veyron']
-print (l)
-print (sorted(l))
-print (l)
+print(l)
+print(sorted(l))
+print(l)
 
 
 # 9.reverse function (simply reverse the order of list)
@@ -260,14 +279,14 @@ print (l)
 
 l = ['mazda','gtr','cayaenne','dbx','veyron']
 l.reverse()
-print (l)
+print(l)
 
 
-# 10.length function (used to find length / number of elements in the list)
+# 10.len function (used to find length / number of elements in the list)
 
 
 l = ['mazda','gtr','cayaenne','dbx','veyron']
-print (len(l))
+print(len(l))
 
 
 # CHAPTER 4 (WORKING WITH LISTS)
@@ -290,8 +309,7 @@ for reptile in reptiles :
 magicians = ['alice','david','caroline'] 
 for magician in magicians :
     print (magician,'that was a great trick .','\n')
-print ('Thank you everyone for the show') # note that this line wasn't intended that's why loop didn't applied on 
-# this line it was executed after the for loop was executed .
+print ('Thank you everyone for the show') # note that this line wasn't intended that's why loop didn't applied on this line it was executed after the for loop was executed .
 
 
 # 2.range function
@@ -303,10 +321,9 @@ for value in range(1,5):
 numbers = list (range(1,4))
 print (numbers) # range can alse be used to print a list of numbers
 
-even_number = list(range(5,51,5)) # this value of range means that it will print numbers from 5-50 skipping 5 
-# numbers each time i.e. it will write a table of five
-for number in even_number :
-    print (number) 
+ev_number = list(range(5,51,5)) # this value of range means that it will print numbers from 5-50 skipping 5 numbers each time i.e. it will write a table of five
+for number in ev_number :
+    print(number)
 
 # Method 1
     
@@ -315,8 +332,7 @@ for value in range (1,11) :
     square = value**2 
     squares.append(square)
 print (squares)
-# we took squares list empty and then we squred all the numbers from 1-10 and gave it a variable square and then we
-# added those values to the empty list we initially took by using append function
+# we took squares list empty and then we squred all the numbers from 1-10 and gave it a variable square and then we added those values to the empty list we initially took by using append function
 
 # Method 2
 
@@ -326,9 +342,9 @@ for square in range (1,11) :
 print(squares) # note if here the print was intended then it would print accoring to for function 
 
 l = [1,2,3,4,5,6,7,8,9,0]
-print (max(l))
-print (min(l))
-print (sum(l))
+print(max(l))
+print(min(l))
+print(sum(l))
 
 squares = [value**2 for value in range (1,11)]
 print (squares)
@@ -337,7 +353,7 @@ print (squares)
 # 3.slicing operator ()
 
 
-goats = ['Messi','Mbappe','Halland','Ronaldo']
+goats = ['Pele','Maradona','Messi','Ronaldo']
 print (goats[0:3]) # 0 represents the first element , [0,3] means [0,3) so 3rd element won't be printed
 print (goats[:3]) # if not specified the starting element it will choose the first one by default
 print (goats[3:]) # if not specified the ending element then by default it will choose the last one 
@@ -353,8 +369,7 @@ for player in players[:3]:
 alan_choice= ['sarah','kylie','scarlett','bella']
 my_choice = ['megan','keiani','alaxandra']
 print ("\nThe girls i don't like :",'\n',alan_choice)
-print ('\n','My Gals :','\n',my_choice) # notice that when \n is used seperately then the print is perfect but in 
-# previous line when \n was used with the line then an extra space is created
+print ('\n','My Gals :','\n',my_choice) # notice that when \n is used seperately then the print is perfect but in previous line when \n was used with the line then an extra space is created
 
 # Method 2
 
@@ -422,20 +437,24 @@ print ('\nThank you for your business .')
 
 
 
-# 5.tuples (permanent list which can not be tempered , these are same as list the only difference is here
-# parenthesis are used)
-# note : each element of a tuple is printed individually but we can loop in order to print all the elements at the 
-# same time
+# 5.tuples 
+
+# A tuple is -
+
+# 1.Immutable
+# 2.Ordered
+# 3.Heterogeneous
+# 4.Indexed
      
 
 l = (200,69)
 print ('\nThe original dimensions are :')
 for dimension in l :
-    print (dimension)
+    print (dimension,end=" ")
 m = (100,200)
 print ('\nModified dimensions are :')
 for dimension in m :
-    print (dimension)
+    print (dimension,end=" ")
 
 
 # CHAPTER 5 (IF STATEMENTS) note : if function is case sensitive
@@ -446,32 +465,26 @@ car == 'BMW'   # double == is use to check whether the statement is true or not
 car == "Ferrari"
 
 card = 'GTR'
-card.lower() == 'gtr' # note commands without print are executed by shift enter after selecting the line you want to
-# execute
+card.lower() == 'gtr' # note commands without print are executed by shift enter after selecting the line you want to execute
 
 # 1.If function
 
 l=('arnav','pratap','singh')
 for name in l :
     if name == 'arnav' :
-     print ('\n',name.title()) 
+     print ('\n',name.title(),end=" ") # end=" " it'll give the space in the end of the output and restricts the creation of new line
     else :
-     print ('\n',name)
-
-# When you want to determine whether two values are not equal, you can combine an exclamation point and an equal
-# sign (!=). The exclamation point represents not, as it does in many programming languages.
-requested_topping = 'mushrooms'
-if requested_topping != 'anchovies':
-    print("Hold the anchovies!")
-# here the print will be hold the achovies ! because requested_topping = mushrooms
+     print ('\n',name,end=" ")
     
 # 2.using or to check multiple conditions
+
+# in python there is no &&(logical AND) dor Logican and in python we use 'and' and for Bitwise and we use '&'
     
 age_0 = 22
 age_1 = 18
-age_0 >= 21 and age_1 >= 21
+print(age_0 >= 21 and age_1 >= 21) # False
 age_1 = 22
-age_0 >= 21 and age_1 >= 21
+print(age_0 >= 21 and age_1 >= 21) # True
 
 # 3.checking whether a value is in a list
 
@@ -482,8 +495,7 @@ else :
     print ('Mushrooms are not available')
 
 l=[1,2,3]
-if 1 not in l : # note that the list was of integer type means we didn't put numbers in inverted commas that's why
-# after if 1 was not put under commas 
+if 1 not in l : 
     print ('1 is not available')
 else :
     print ('1 is available')
@@ -507,8 +519,7 @@ elif 'White' in person :
 else :
     print ('You are perfect')
     
-# instead of else elif can also be used which would have been more accurate because then it would have been operated
-# in a particular condition
+# instead of else , elif can also be used which would have been more accurate because then it would have been operated in a particular condition
     
 alien_colour = ['green','yellow','red']
 if 'green' in alien_colour :
@@ -555,40 +566,44 @@ for user in new_users_lower:
     else :
         print ('\n'+ user,', username is available .')
 
-list = ['1','2','3','4','5','6','7','8','9']
-for number in list :
-    if number is '1' :
-       print ('\n'+'1st')
-    elif number is '2' :
-       print ('\n'+'2nd')
-    elif number is '3' :
-       print ('\n'+'3rd')
-    else :
-       print ('\n'+number+'th')
 
+# CHAPTER 6 (DICTIONARIES) - It has a key-value pair and dictionary is enclosed with {}
 
-# CHAPTER 6 (DICTIONARIES)
+# Dictionary key - 
 
+# (1) Keys must be immutable data types . This means they cannot be changed after creation . Valid key types include -
+# 1.Numbers (integers, floats, complex numbers)
+# 2.Strings
+# 3.Tuples (provided all elements within the tuple are also immutable)
+# 4.Booleans
+# 5.Frozensets
 
-alien_0 = {'colour':'green','points':'5'} # colour is a key value pair and each key value pair is assosiated to a 
-# value and key can be a string , an integer , a list or a dictionary
-print (alien_0['colour'])
-print (alien_0['points'])
+# (2) Keys must be unique . If you assign a value to an existing key, the old value will be overwritten.
+
+# Dictionary value -
+
+# (1) Values can be of any data type . This includes mutable types like lists and other dictionaries , as well as immutable types.
+# (2) Values can be duplicated . Multiple keys can point to the same value.
+
+# functions - 
+
+# 1.    .keys()
+# 2.    .values()
+# 3.    .items() - used in looping                            Ex - for key,value in d.items():
+
+alien_0 = {'colour':'green','points':'5'} # colour is a key and each key is assosiated to a value
+print (alien_0['colour']) # green
+print (alien_0['points']) # 5
 
 alien_0 = {'color': 'green', 'points': 5}
 new_points = alien_0['points']
 print("You just earned "+str(new_points)+" points!")
 
-# Method 2
-
-alien_0 = {'color': 'green', 'points': 5}
-print ('you just earned',(alien_0['points']),'points!')
-
 # 1.adding a key-value pair to a dictionary
 
 l = {'colour':'green','points':5}
 l['species'] = 'nigga type'
-print (l)
+print(l)
 
 alien = {'x_coordinates':0,'y_coordinates':0,'speed':'fast'}
 print ('speed of alien is',(alien['speed']))
@@ -609,16 +624,12 @@ print(l)
 del l['species']
 print(l)
 
-dictionary = {'first_name':'Arnav','middle_name':'Pratap','last_name':'Singh'}
-print('\nMy full name is :',dictionary['first_name'],dictionary['middle_name'],dictionary['last_name'])
-
 # 3.loop through key-value pair in a dictionary
 
 my_dict = {'a': 1, 'b': 2, 'c': 3}
-for key , value in my_dict.items(): # for looping in dictionaries in python .itms() is used note - key and value is
-# variable and remember that comma is a must between the key and value variable
-    print('\n'+key,':', value)
-
+for key , value in my_dict.items(): # for looping in dictionaries in python .itms() is used note - key and value is variable and remember that comma is a must between the key and value variable
+    print('\n'+key,':', value ,end=" ")
+print()
 # 4.loop through keys 
     
 favorite_languages = {
@@ -627,11 +638,10 @@ favorite_languages = {
     'edward': 'ruby',
     'phil': 'python',
     }
-for key in favorite_languages.keys() :# note even if you don't write .keys() the output would be same because Looping through the keys is 
-# actually the default behavior when looping through a dictionary
+for key in favorite_languages.keys() :# note even if you don't write .keys() the output would be same because Looping through the keys is actually the default behavior when looping through a dictionary
     print (key.upper())
 
-# sorted function can also be used EX- sorted(dictionary.keys()) 
+# sorted function can also be used Ex - sorted(dictionary.keys()) 
     
 favorite_languages = {
     'jen': 'python',
@@ -639,7 +649,7 @@ favorite_languages = {
     'edward': 'ruby',
     'phil': 'python',
     }
-print (sorted(favorite_languages.keys()))
+print(sorted(favorite_languages.keys()))
 
 # 5.loop through values 
     
@@ -653,9 +663,9 @@ print("The following languages have been mentioned:")
 for language in favorite_languages.values():
     print(language.title())
 
-# set is a list in which element doesn't repeat just like in maths
+# Set - It is a type of list in which element doesn't repeat just like in maths
     
-l = {'phil':'python','jody':'javascript','nile':'C#','ruby':'javascript'}
+l = {'phil':'python','jody':'javaScript','nile':'C#','ruby':'javaScript'}
 print ('Languages considered are :')
 for value in sorted(set(l.values())):
     print(value)
@@ -669,9 +679,8 @@ for country in l :
     print(country.upper())
 
 # 6.nesting
-# Sometimes you’ll want to store a set of dictionaries in a list or a list of items as a value in a dictionary. This
-# is called nesting. You can nest a set of dictionaries inside a list, a list of items inside a dictionary, or even a
-# dictionary inside another dictionary.
+
+# Sometimes you’ll want to store a set of dictionaries in a list or a list of items as a value in a dictionary. This is called nesting. You can nest a set of dictionaries inside a list, a list of items inside a dictionary, or even a dictionary inside another dictionary.
     
 aliens = []
 for alien_number in range (0,30) :
@@ -933,6 +942,7 @@ def num_type(x):
 num_type(69)
 
 # 5.recursion (function call itself repeatedly)
+
 # these are same as loops every thing that can be done by can be dine by recursion and vice versa.
 
 def show(n): # we will use recursion such that we wan to print n , n-1 , n-2 , ___ 1
