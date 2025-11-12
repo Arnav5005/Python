@@ -151,7 +151,7 @@ print (message)
 # 7.sort (irreversible)         used to arrange elements of list in forward/reverse alphabetical order          Ex - l.sort()
 # 8.sorted (reversible)         same functionality the only difference is it's reversible                       Ex - print(sorted(l))
 # 9.reverse                     used to reverse the list                                                        Ex - l.reverse()
-# 10.len                        returns length of the list                                                      Ex - print(len(l))
+# 10.len                        returnfs length of the list                                                      Ex - print(len(l))
 
 l = ['every','girl','calls','me','daddy']
 print (l[0].upper()) # EVERY
@@ -1025,7 +1025,7 @@ elements(mc,0)
 # open read and close file
 # f = open("file_name","mode")
 
-# modes = r=read , w=write(overwrite i.e. all the data of file willl be deleated then we can write in the file) ,
+# modes = r=read , w=write(overwrite i.e. all the data of file will be deleated then we can write in the file) ,
 # a=append , x=new file , b=binary , t=text mode(by default function) , +=open a disk for updating 
 # (reading and writing)
 f=open("me.txt","r") # file_name,mode 
@@ -1057,8 +1057,7 @@ f.write("\nThen I will move on to rust.")
 
 # for reading and writing simultaneously 
 # 1.r+
-# note-this mode doesn't overwrite the file it will remove the words which will coincide 
-# with the one we are writing a code for
+# note-this mode doesn't overwrite the file it will remove the words which will coincide with the one we are writing a code for
 
 f = open("demo.txt","r+")
 f.write("I am a programmer")
@@ -1104,7 +1103,7 @@ with open("sample.txt","w") as f:
 
 with open("practise.txt","w") as f:
     f.write("Hi everyone.\nWe are learning file I/O.\n")
-    f.write("usng Java.\nI like programming in Java.")
+    f.write("using Java.\nI like programming in Java.")
 
 # replace Java with python in practise.txt
 
